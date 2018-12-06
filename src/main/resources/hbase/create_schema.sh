@@ -31,12 +31,15 @@ echo "HBase table '$TABLE_NAME' is now created"
 }
 
 
+# read namespace
+NAMESPACE=$1
+
 # check for a previous table, and delete it if one exists
-create_table "ENTERPRISE_GROUP"
-create_table "ENTERPRISE"
-create_table "LOCAL_UNIT"
-create_table "REPORTING_UNIT"
-create_table "LEGAL_UNIT"
-create_table "VAT"
-create_table "PAYE"
-create_table "CH"
+create_table "$NAMESPACE:ENTERPRISE_GROUP"
+create_table "$NAMESPACE:ENTERPRISE"
+create_table "$NAMESPACE:LOCAL_UNIT"
+create_table "$NAMESPACE:REPORTING_UNIT"
+create_table "$NAMESPACE:LEGAL_UNIT"
+create_table "$NAMESPACE:VAT"
+create_table "$NAMESPACE:PAYE"
+create_table "$NAMESPACE:CH"
