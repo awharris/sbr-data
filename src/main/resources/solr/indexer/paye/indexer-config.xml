@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+    NOTE: The value 'PAYE' below refers to the HBase table name,
+          not to the name of the attribute in the schema.xml file's root
+          element. We are using row mapping, which means that each row in
+          the HBase table will become a document in the Solr index. The
+          row key will populate the 'id' field in the index, which is the
+          uniqueKey field specified in the schema.xml file.
+-->
+<indexer table="PAYE"
+         mapper="com.ngdata.hbaseindexer.morphline.MorphlineResultToSolrMapper"
+         mapping-type="row"
+         table-name-field="unit_type">
+    <!--
+        This is the relative or absolute path on the local file system to
+        the morphline configuration file. When using Cloudera Manager, this
+        value should always by "morphlines.conf".
+    -->
+    <param name="morphlineFile" value="morphlines.conf"/>
+</indexer>s
