@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+    NOTE: The value 'ENTERPRISE' below refers to the HBase table name,
+          not to the name of the attribute in the schema.xml file's root
+          element. We are using row mapping, which means that each row in
+          the HBase table will become a document in the Solr index. The
+          row key will populate the 'id' field in the index, which is the
+          uniqueKey field specified in the schema.xml file.
+-->
+<indexer table="ENTERPRISE"
+         mapping-type="row"
+         table-name-field="unit_type">
+
+    <!-- Common unit fields -->
+    <field name="unit_id" value="d:ern" source="value" type="string"/>
+    <field name="idbr_id" value="d:entref" source="value" type="string"/>
+    <field name="name" value="d:name" source="value" type="string"/>
+    <field name="trading_style" value="d:trading_style" source="value" type="string"/>
+    <field name="address1" value="d:address1" source="value" type="string"/>
+    <field name="address2" value="d:address2" source="value" type="string"/>
+    <field name="address3" value="d:address3" source="value" type="string"/>
+    <field name="address4" value="d:address4" source="value" type="string"/>
+    <field name="address5" value="d:address5" source="value" type="string"/>
+    <field name="postcode" value="d:postcode" source="value" type="string"/>
+    <field name="legal_status" value="d:legal_status" source="value" type="string"/>
+    <field name="sic" value="d:sic" source="value" type="string"/>
+
+    <!-- Specific unit type fields -->
+
+</indexer>
